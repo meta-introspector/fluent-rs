@@ -19,7 +19,7 @@ pub struct Scope<'bundle, 'ast, 'args, 'errors, R, M> {
     /// Laughs and Quadratic Blowup attacks.
     pub(super) placeables: u8,
     /// Tracks hashes to prevent infinite recursion.
-    traveled: smallvec::SmallVec<[&'ast ast::Pattern<&'bundle str>; 2]>,
+    traveled: smallvec::SmallVec<&'ast ast::Pattern<&'bundle str>, 2>,
     /// Track errors accumulated during resolving.
     pub errors: Option<&'errors mut Vec<FluentError>>,
     /// Makes the resolver bail.
