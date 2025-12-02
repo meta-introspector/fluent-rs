@@ -31,7 +31,7 @@ rustc-hash.workspace = true
 unic-langid.workspace = true
 intl-memoizer.workspace = true
 self_cell = "1.2"
-smallvec = "1.13"
+smallvec = {workspace=true}
 
 [dev-dependencies]
 criterion.workspace = true
