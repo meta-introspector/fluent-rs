@@ -200,10 +200,10 @@ impl<R, M> FluentBundle<R, M> {
 
         for (entry_pos, entry) in res.entries().enumerate() {
             let (id, entry) = match entry {
-                ast::Entry::Message(ast::Message { ref id, .. }) => {
+                ast::Entry::Message(ast::Message { id, .. }) => {
                     (id.name, Entry::Message((res_pos, entry_pos)))
                 }
-                ast::Entry::Term(ast::Term { ref id, .. }) => {
+                ast::Entry::Term(ast::Term { id, .. }) => {
                     (id.name, Entry::Term((res_pos, entry_pos)))
                 }
                 _ => continue,
@@ -303,10 +303,10 @@ impl<R, M> FluentBundle<R, M> {
 
         for (entry_pos, entry) in res.entries().enumerate() {
             let (id, entry) = match entry {
-                ast::Entry::Message(ast::Message { ref id, .. }) => {
+                ast::Entry::Message(ast::Message { id, .. }) => {
                     (id.name, Entry::Message((res_pos, entry_pos)))
                 }
-                ast::Entry::Term(ast::Term { ref id, .. }) => {
+                ast::Entry::Term(ast::Term { id, .. }) => {
                     (id.name, Entry::Term((res_pos, entry_pos)))
                 }
                 _ => continue,

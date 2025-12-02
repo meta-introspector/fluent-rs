@@ -39,7 +39,7 @@ impl<'bundle> WriteValue<'bundle> for ast::Pattern<&'bundle str> {
                         w.write_str(value)?;
                     }
                 }
-                ast::PatternElement::Placeable { ref expression } => {
+                ast::PatternElement::Placeable { expression } => {
                     scope.placeables += 1;
                     if scope.placeables > MAX_PLACEABLES {
                         scope.dirty = true;

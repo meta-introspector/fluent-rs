@@ -40,7 +40,7 @@ impl<R: Borrow<FluentResource>, M> GetEntry for FluentBundle<R, M> {
         self.entries.get(id).and_then(|ref entry| match entry {
             Entry::Message((resource_idx, entry_idx)) => {
                 let res = self.resources.get(*resource_idx)?.borrow();
-                if let ast::Entry::Message(ref msg) = res.get_entry(*entry_idx)? {
+                if let ast::Entry::Message(msg) = res.get_entry(*entry_idx)? {
                     Some(msg)
                 } else {
                     None
@@ -54,7 +54,7 @@ impl<R: Borrow<FluentResource>, M> GetEntry for FluentBundle<R, M> {
         self.entries.get(id).and_then(|ref entry| match entry {
             Entry::Term((resource_idx, entry_idx)) => {
                 let res = self.resources.get(*resource_idx)?.borrow();
-                if let ast::Entry::Term(ref msg) = res.get_entry(*entry_idx)? {
+                if let ast::Entry::Term(msg) = res.get_entry(*entry_idx)? {
                     Some(msg)
                 } else {
                     None
