@@ -294,7 +294,7 @@ where
 
         let invalid_expression_found = match &exp {
             ast::Expression::Inline(ast::InlineExpression::TermReference {
-                ref attribute, ..
+                attribute, ..
             }) => attribute.is_some(),
             _ => false,
         };
