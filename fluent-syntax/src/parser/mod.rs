@@ -66,7 +66,7 @@
 //!
 //! Any unparsed parts of the input are returned as [`ast::Entry::Junk`] elements.
 #[macro_use]
-mod errors;
+pub mod errors;
 #[macro_use]
 mod macros;
 mod comment;
